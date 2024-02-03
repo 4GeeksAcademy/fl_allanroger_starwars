@@ -1,3 +1,4 @@
+// appContext.js
 import React, { useState, useEffect } from "react";
 import getState from "./flux.js";
 

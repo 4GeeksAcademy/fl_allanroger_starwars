@@ -1,0 +1,12 @@
+
+.scrolling-container {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+
+.fixed-size-card {
+    width: 200px; /* Defina o tamanho desejado para os cards */
+    margin-right: 10px; /* Espaçamento entre os cards, ajuste conforme necessário */
+  }
+  
