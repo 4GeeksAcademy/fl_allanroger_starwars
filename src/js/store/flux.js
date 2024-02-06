@@ -1,44 +1,4 @@
-// // flux.js
-// const getState = ({ getStore, getActions, setStore }) => {
-//     return {
-//         store: {
-//             planets: [],
-//             characters: [],
-// 			vehicles: [],
-//             // Adicione outros estados necessários aqui
-//         },
-//         actions: {
-//             // Função para buscar planetas
-//             fetchPlanets: () => {
-//                 fetch("https://www.swapi.tech/api/planets/")
-//                 .then(res => res.json())
-//                 .then(data => {
-//                     setStore({ planets: data.result });
-//                 })
-//                 .catch(err => console.error(err));
-//             },
-//             // Função para buscar personagens
-//             fetchCharacters: () => {
-//                 fetch("https://www.swapi.tech/api/people/")
-//                 .then(res => res.json())
-//                 .then(data => {
-//                     setStore({ characters: data.result });
-//                 })
-//                 .catch(err => console.error(err));
-//             },
-// 			fetchVehicle: () => {
-//                 fetch("https://www.swapi.tech/api/vehicles/")
-//                 .then(res => res.json())
-//                 .then(data => {
-//                     setStore({ vehicles: data.result });
-//                 })
-//                 .catch(err => console.error(err));
-//             },
-//         }
-//     };
-// };
 
-// export default getState;
 // flux.js
 const getState = ({ getStore, getActions, setStore }) => {
     return {
@@ -56,18 +16,10 @@ const getState = ({ getStore, getActions, setStore }) => {
             fetchPlanets: () => {
                 fetch("https://www.swapi.tech/api/planets/")
                 .then(res => res.json())
-                // .then(data => {
-                //     console.log(data);
-                //     setStore({ planets: data.result.map(item => item.properties) });
-                // })
                 .then(data => {
-                    if (data && data.result) {
-                        setStore({ planets: data.result.map(item => item.properties) });
-                    } else {
-                        console.error("Data format from API is unexpected:", data);
-                    }
+                    console.log(data.results);
+                    setStore({ planets: data.results });
                 })
-                
                 .catch(err => console.error(err));
             },
             // Função para buscar personagens
@@ -75,8 +27,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                 fetch("https://www.swapi.tech/api/people/")
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
-                    setStore({ characters: data.result.map(item => item.properties) });
+                    console.log(data.results);
+                    setStore({ characters: data.results });
                 })
                 .catch(err => console.error(err));
             },
@@ -85,8 +37,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                 fetch("https://www.swapi.tech/api/vehicles/")
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
-                    setStore({ vehicles: data.result.map(item => item.properties) });
+                    console.log(data.results);
+                    setStore({ vehicles: data.results });
                 })
                 .catch(err => console.error(err));
             },
