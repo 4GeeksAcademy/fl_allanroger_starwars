@@ -73,19 +73,19 @@ const PlanetDetails = () => {
       ) : details ? (
         // Exibe os detalhes do planeta
         <div className='m-5'>
-            <img 
+          <img
             src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
             onError={handleError} // Usando o evento onError para tratar o erro
             alt="Planet"
           />
           {/* <img src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt="Planet" /> */}
           <div className='p-2 mt-2 bg-light'>
-          <h2>{details.name}</h2>
-          <h6>Climate: {details.climate}</h6>
-          <h6>Terrain: {details.terrain}</h6>
-          <h6>Population: {details.population}</h6>
-          {/* Outros detalhes do planeta */}
-        </div>
+            <h2>{details.name}</h2>
+            <h6>Climate: {details.climate}</h6>
+            <h6>Terrain: {details.terrain}</h6>
+            <h6>Population: {details.population}</h6>
+            {/* Outros detalhes do planeta */}
+          </div>
         </div>
       ) : (
         // Caso não encontre os detalhes, mostra uma mensagem

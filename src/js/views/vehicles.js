@@ -1,19 +1,24 @@
 
 // vehicles.js
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
-
-const logostar = "https://cdn.discordapp.com/attachments/1200818313421398017/1200875065810620416/allanrogerhaze_create_a_black_and_yellow_logo_star_wars_4geeks__6f696a13-da2a-4efd-a691-181876575c94.png?ex=65c7c50e&is=65b5500e&hm=2a9b47ca289520324c0cab3d2fa8ab8f0c54f7babffbc2607cab668579616b36&";
-
 const Vehicle = ({ vehicle }) => {
-  console.log(vehicle)
+  const { actions } = useContext(Context); // Use o contexto para acessar as ações
+
+  const handleAddFavorite = () => {
+    actions.addFavorite(vehicle.name); // Chame a ação para adicionar aos favoritos
+  };
   return (
     <div className="card fixed-size-card d-inline-block" style={{ width: '18rem' }}>
       <img src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.uid}.jpg`} className="card-img-top" alt="Vehicle" />
       <div className="card-body">
         <h5 className="card-title">{vehicle.name}</h5>
-        <Link to={`/vehicles/${vehicle.uid}`} className="btn btn-primary">Learn more</Link>
+        <Link to={`/vehicles/${vehicle.uid}`} className="btn btn-secondary">Learn more</Link>
+        <button onClick={handleAddFavorite} className="btn btn-warning ms-2">
+          🖤
+        </button>
       </div>
     </div>
   );

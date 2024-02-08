@@ -13,7 +13,7 @@ export const Home = () => {
   const { store, actions } = useContext(Context);
 
   // Buscando dados da API quando o componente é montado
-console.log(store.characters)
+  console.log(store.characters)
 
   return (
     <div className="text-center m-5">
@@ -22,11 +22,11 @@ console.log(store.characters)
       <div className="scrolling-container">
         <div className="scrolling-container d-flex flex-row flex-nowrap overflow-auto">
           {store.characters.map((character, index) => {
-           return(
-            <div key={index}>
-              <Character character={character} />
-            </div>
-           )
+            return (
+              <div key={index}>
+                <Character character={character} />
+              </div>
+            )
           })}
         </div>
       </div>
@@ -35,11 +35,11 @@ console.log(store.characters)
       <div className="scrolling-container">
         <div className="scrolling-container d-flex flex-row flex-nowrap overflow-auto">
           {store.planets.map((planet, index) => {
-           return(
-            <div key={index}>
-              <Planet planet={planet} />
-            </div>
-           )
+            return (
+              <div key={index}>
+                <Planet planet={planet} />
+              </div>
+            )
           })}
         </div>
       </div>
@@ -48,11 +48,11 @@ console.log(store.characters)
       <div className="scrolling-container">
         <div className="scrolling-container d-flex flex-row flex-nowrap overflow-auto">
           {store.vehicles.map((vehicle, index) => {
-           return(
-            <div key={index}>
-              <Vehicle vehicle={vehicle} />
-            </div>
-           )
+            return (
+              <div key={index}>
+                <Vehicle vehicle={vehicle} />
+              </div>
+            )
           })}
         </div>
       </div>

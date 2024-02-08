@@ -34,12 +34,12 @@ const VehicleDetails = () => {
         <div className='m-5'>
           <img src={`https://starwars-visualguide.com/assets/img/vehicles/${id}.jpg`} alt="Vehicle" />
           <div className='p-2 mt-2 bg-light'>
-          <h2>{details.name}</h2>
-          <h6>Model: {details.model}</h6>
-          <h6>Manufacturer: {details.manufacturer}</h6>
-          <h6>Cost in Credits: {details.cost_in_credits}</h6>
-          {/* Outros detalhes do veículo */}
-        </div>
+            <h2>{details.name}</h2>
+            <h6>Model: {details.model}</h6>
+            <h6>Manufacturer: {details.manufacturer}</h6>
+            <h6>Cost in Credits: {details.cost_in_credits}</h6>
+            {/* Outros detalhes do veículo */}
+          </div>
         </div>
       ) : (
         // Caso não encontre os detalhes, mostra uma mensagem
