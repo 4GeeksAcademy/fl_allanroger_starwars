@@ -12,15 +12,6 @@ console.log(character)
       <img src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} className="card-img-top" alt="Character" />
       <div className="card-body">
         <h5 className="card-title">{character.name}</h5>
-
-        {/* <p className="card-text">
-          body: json.stringfy 
-          Gender: {character.properties.gender}<br />
-          Birth Year: {character.properties.birth_year}<br />
-          Height: {character.properties.height} cm<br />
-          Eye Color: {character.properties.eye_color}
-        </p> */}
-        {/* Exemplo de uso do Link para navegar para a página de detalhes do personagem */}
         <Link to={`/characters/${character.uid}`} className="btn btn-primary">
           Learn More
         </Link>

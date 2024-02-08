@@ -2,15 +2,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
+import "../styles/layout.css";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
-
-import Planet from "./views/planets"; // Descomentado
-import Character from "./views/characters"; // Descomentado e corrigido
-import Vehicle from "./views/vehicles";
 
 import PlanetDetails from "./views/planetDetails";
 import CharacterDetails from "./views/characterDetails";
@@ -26,7 +23,7 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div>
+		<div className="background-img">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />

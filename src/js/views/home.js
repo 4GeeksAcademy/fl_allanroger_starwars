@@ -5,8 +5,7 @@ import Planet from "./planets";
 import Character from "./characters";
 import Vehicle from "./vehicles";
 import { Context } from "../store/appContext";
-// Importe Link de react-router-dom no início do arquivo
-import { Link } from "react-router-dom";
+
 
 
 export const Home = () => {
@@ -25,7 +24,6 @@ console.log(store.characters)
           {store.characters.map((character, index) => {
            return(
             <div key={index}>
-              <p>{character.name}</p>
               <Character character={character} />
             </div>
            )
@@ -39,7 +37,6 @@ console.log(store.characters)
           {store.planets.map((planet, index) => {
            return(
             <div key={index}>
-              <p>{planet.name}</p>
               <Planet planet={planet} />
             </div>
            )
@@ -53,7 +50,6 @@ console.log(store.characters)
           {store.vehicles.map((vehicle, index) => {
            return(
             <div key={index}>
-              <p>{vehicle.name}</p>
               <Vehicle vehicle={vehicle} />
             </div>
            )
